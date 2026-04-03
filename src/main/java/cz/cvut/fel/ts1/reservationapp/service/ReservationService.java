@@ -36,16 +36,39 @@ public class ReservationService {
             throw new IllegalArgumentException("Reservation conflict");
         }
 
+        ReservationStatus status;
+        if (r.getPeople() <= 4) {
+            status = ReservationStatus.CONFIRMED;
+        } else {
+            status = ReservationStatus.PENDING;
+        }
+
         Reservation reservationToSave = new Reservation(
                 null,
                 r.getRoomId(),
                 r.getPeople(),
                 r.getStart(),
                 r.getEnd(),
-                ReservationStatus.CREATED
+                status
         );
 
         return reservationRepository.save(reservationToSave);
+    }
+
+    public Reservation confirmReservation(Long reservationId) {
+        if (reservationId == null) {
+            throw new IllegalArgumentException("Reservation id cannot be null");
+        }
+
+        Reservation reservation = reservationRepository.findById(reservationId).orElseThrow(() -> new IllegalArgumentException("Reservation not found"));
+
+        if (reservation.getStatus() != ReservationStatus.PENDING) {
+            throw new IllegalArgumentException("Only pending reservation can be confirmed");
+        }
+
+        reservation.setStatus(ReservationStatus.CONFIRMED);
+
+        return reservationRepository.save(reservation);
     }
 
     public Reservation cancelReservation(Long reservationId) {
@@ -81,6 +104,12 @@ public class ReservationService {
             throw new IllegalArgumentException("Start must be before end");
         }
 
+        int startMinute = r.getStart().getMinute();
+        int endMinute = r.getEnd().getMinute();
+        if (startMinute % 15 != 0 || endMinute % 15 != 0) {
+            throw new IllegalArgumentException("Reservation time must be aligned to 15-minute intervals");
+        }
+
         if (r.getPeople() <= 0) {
             throw new IllegalArgumentException("People must be greater than zero");
         }
@@ -97,6 +126,9 @@ public class ReservationService {
         Duration duration = Duration.between(r.getStart(), r.getEnd());
         if (duration.toMinutes() < 30) {
             throw new IllegalArgumentException("Too short reservation");
+        }
+        if (duration.toMinutes() > 240) {
+            throw new IllegalArgumentException("Too long reservation");
         }
 
         LocalTime openingTime = LocalTime.of(8, 0);
