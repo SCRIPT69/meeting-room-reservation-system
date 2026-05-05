@@ -190,4 +190,57 @@ class ReservationServiceTest {
         );
         assertEquals("Too long reservation", ex.getMessage());
     }
+
+    // Test 11: začátek rezervace před 08:00 -> IllegalArgumentException
+    // EC2 workingHours: start < 08:00 (nevalidní)
+    // BVA: 07:45 (nejbližší zarovnaná hodnota před hranicí 08:00)
+    @Test
+    void validateReservation_startBeforeWorkingHours_throwsException() {
+        Reservation r = validReservation();
+        // 07:45 – 08:45 = 60 minut, zarovnáno, ale začátek je před pracovní dobou
+        r.setStart(LocalDateTime.of(2026, 3, 16, 7, 45));
+        r.setEnd(LocalDateTime.of(2026, 3, 16, 8, 45));
+
+        IllegalArgumentException ex = assertThrows(
+                IllegalArgumentException.class,
+                () -> service.validateReservation(r, 10)
+        );
+        assertEquals("Outside working hours", ex.getMessage());
+    }
+
+    // Test 12: konec rezervace po 18:00 -> IllegalArgumentException
+    // EC3 workingHours: end > 18:00 (nevalidní)
+    // BVA: 18:15 (nejbližší zarovnaná hodnota za hranicí 18:00)
+    @Test
+    void validateReservation_endAfterWorkingHours_throwsException() {
+        Reservation r = validReservation();
+        // 17:00 – 18:15 = 75 minut, zarovnáno, ale konec je po pracovní době
+        r.setStart(LocalDateTime.of(2026, 3, 16, 17, 0));
+        r.setEnd(LocalDateTime.of(2026, 3, 16, 18, 15));
+
+        IllegalArgumentException ex = assertThrows(
+                IllegalArgumentException.class,
+                () -> service.validateReservation(r, 10)
+        );
+        assertEquals("Outside working hours", ex.getMessage());
+    }
+
+    // Test 13: zcela validní rezervace -> vrátí true
+    // EC: people = 2 (1–4 -> CONFIRMED), vše ostatní v pořádku
+    // BVA: start = 08:00 (minimální platná hodnota), end = 09:00
+    @Test
+    void validateReservation_validReservation_returnsTrue() {
+        Reservation r = new Reservation(
+                null,
+                1L,
+                2,                                              // EC2: 1–4 osob
+                LocalDateTime.of(2026, 3, 16, 8, 0),   // BVA: přesně 08:00
+                LocalDateTime.of(2026, 3, 16, 9, 0),   // 60 minut, zarovnáno
+                ReservationStatus.CONFIRMED
+        );
+
+        boolean result = service.validateReservation(r, 10);
+
+        assertTrue(result);
+    }
 }
