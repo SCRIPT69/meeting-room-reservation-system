@@ -83,6 +83,7 @@ public class ReservationService {
             throw new IllegalArgumentException("Reservation already cancelled");
         }
 
+
         reservation.setStatus(ReservationStatus.CANCELLED);
         return reservationRepository.save(reservation);
     }
