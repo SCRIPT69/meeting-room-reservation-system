@@ -1,7 +1,6 @@
-package cz.cvut.fel.ts1.reservationapp;
+package cz.cvut.fel.ts1.reservationapp.service;
 
 
-import cz.cvut.fel.ts1.reservationapp.service.ReservationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import cz.cvut.fel.ts1.reservationapp.model.Reservation;
@@ -48,12 +47,12 @@ public class ReservationServiceMockitoTest {
 
     @Test
     public void createReservation_thisShouldBeConfirmed_becausePeopleLessOrEqual4_alsoNoConflict(){
-        Reservation guest_reservation = validReservation(4);
+        Reservation guestReservation = validReservation(4);
         Room room = new Room(1L, "Alpha", 4);
 
 
         when(roomRepositoryMock.findById(1L)).thenReturn(Optional.of(room));
-        when(reservationRepositoryMock.hasConflict(1L, guest_reservation.getStart(), guest_reservation.getEnd())).thenReturn(false);
+        when(reservationRepositoryMock.hasConflict(1L, guestReservation.getStart(), guestReservation.getEnd())).thenReturn(false);
 
         when(reservationRepositoryMock.save(any(Reservation.class))).thenAnswer(invocation -> {
             Reservation saved = invocation.getArgument(0);
@@ -61,7 +60,7 @@ public class ReservationServiceMockitoTest {
             return saved;
         });
 
-        Reservation result = reservationService.createReservation(guest_reservation);
+        Reservation result = reservationService.createReservation(guestReservation);
 
         assertNotNull(result);
         assertEquals(100L, result.getId());
@@ -73,25 +72,25 @@ public class ReservationServiceMockitoTest {
 
         assertEquals(1L, savedReservationObject.getRoomId());
         assertEquals(4, savedReservationObject.getPeople());
-        assertEquals(guest_reservation.getStart(), savedReservationObject.getStart());
-        assertEquals(guest_reservation.getEnd(), savedReservationObject.getEnd());
+        assertEquals(guestReservation.getStart(), savedReservationObject.getStart());
+        assertEquals(guestReservation.getEnd(), savedReservationObject.getEnd());
         assertEquals(ReservationStatus.CONFIRMED, savedReservationObject.getStatus());
     }
 
 
     @Test
     public void createReservation_thisShouldSetPending_whenPeopleMoreThan4(){
-        Reservation guest_reservation = validReservation(6);
+        Reservation guestReservation = validReservation(6);
         Room room = new Room(1L, "Alpha", 8);
 
         when(roomRepositoryMock.findById(1L)).thenReturn(Optional.of(room));
-        when(reservationRepositoryMock.hasConflict(1L, guest_reservation.getStart(),
-                guest_reservation.getEnd())).thenReturn(false);
+        when(reservationRepositoryMock.hasConflict(1L, guestReservation.getStart(),
+                guestReservation.getEnd())).thenReturn(false);
 
         when(reservationRepositoryMock.save(any(Reservation.class))).thenAnswer(invocation ->
                 invocation.getArgument(0));
 
-        Reservation result = reservationService.createReservation(guest_reservation);
+        Reservation result = reservationService.createReservation(guestReservation);
 
         assertEquals(ReservationStatus.PENDING, result.getStatus());
         verify(reservationRepositoryMock, times(1)).save(any(Reservation.class));
@@ -101,15 +100,15 @@ public class ReservationServiceMockitoTest {
 
     @Test
     public void createReservation_thisShouldThrowException_whenConflictExists(){
-        Reservation guest_reservation = validReservation(3);
+        Reservation guestReservation = validReservation(3);
         Room room = new Room(1L, "Alpha", 4);
 
         when(roomRepositoryMock.findById(1L)).thenReturn(Optional.of(room));
-        when(reservationRepositoryMock.hasConflict(1L, guest_reservation.getStart(),
-                guest_reservation.getEnd())).thenReturn(true);
+        when(reservationRepositoryMock.hasConflict(1L, guestReservation.getStart(),
+                guestReservation.getEnd())).thenReturn(true);
 
         IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class,
-                ()-> reservationService.createReservation(guest_reservation));
+                ()-> reservationService.createReservation(guestReservation));
 
 
 
@@ -120,12 +119,12 @@ public class ReservationServiceMockitoTest {
 
     @Test
     public void createReservation_shouldThrow_whenRoomNotFound(){
-        Reservation guest_reservation = validReservation(2);
+        Reservation guestReservation = validReservation(2);
 
         when(roomRepositoryMock.findById(1L)).thenReturn(Optional.empty());
 
         IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class,
-                ()->reservationService.createReservation(guest_reservation));
+                ()->reservationService.createReservation(guestReservation));
 
         assertEquals("Room not found", illegalArgumentException.getMessage());
         verify(reservationRepositoryMock, never()).save(any());
