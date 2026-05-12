@@ -1,5 +1,6 @@
 package cz.cvut.fel.ts1.reservationapp;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

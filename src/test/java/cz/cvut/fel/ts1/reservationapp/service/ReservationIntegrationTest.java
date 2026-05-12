@@ -1,9 +1,8 @@
-package cz.cvut.fel.ts1.reservationapp;
+package cz.cvut.fel.ts1.reservationapp.service;
 import cz.cvut.fel.ts1.reservationapp.model.Reservation;
 import cz.cvut.fel.ts1.reservationapp.model.ReservationStatus;
 import cz.cvut.fel.ts1.reservationapp.repository.ReservationRepository;
 import cz.cvut.fel.ts1.reservationapp.repository.RoomRepository;
-import cz.cvut.fel.ts1.reservationapp.service.ReservationService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
