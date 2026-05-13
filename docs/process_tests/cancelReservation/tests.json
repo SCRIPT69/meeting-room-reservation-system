@@ -1,0 +1,78 @@
+{
+  "testSetName": "Process test set 13.5.2026;15:21",
+  "graphName": "cancelReservation",
+  "algorithmType": "PCT",
+  "tdl": 2,
+  "reduction": false,
+  "showNodes": false,
+  "testPaths": [
+    {
+      "testPathId": 1,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 2,
+          "edgeLabel": "ANO"
+        }
+      ]
+    },
+    {
+      "testPathId": 2,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 3,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 4,
+          "edgeLabel": "NE"
+        }
+      ]
+    },
+    {
+      "testPathId": 3,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 3,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 5,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 6,
+          "edgeLabel": "ANO"
+        }
+      ]
+    },
+    {
+      "testPathId": 4,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 3,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 5,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 7,
+          "edgeLabel": "NE"
+        }
+      ]
+    }
+  ]
+}

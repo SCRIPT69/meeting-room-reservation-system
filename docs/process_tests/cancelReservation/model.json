@@ -1,0 +1,246 @@
+{
+  "graphId" : null,
+  "name" : "cancelReservation",
+  "description" : "",
+  "publishStatus" : 0,
+  "folderId" : null,
+  "ownerId" : null,
+  "readUsersIds" : [ ],
+  "categories" : [ ],
+  "start" : {
+    "innerId" : 1,
+    "description" : "",
+    "name" : "START",
+    "x" : -55,
+    "y" : -250,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "default",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : null
+    }
+  },
+  "nodes" : [ {
+    "innerId" : 2,
+    "description" : "",
+    "name" : "A",
+    "x" : -35,
+    "y" : -90,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "default",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : null
+    }
+  }, {
+    "innerId" : 3,
+    "description" : "",
+    "name" : "B",
+    "x" : -140,
+    "y" : 40,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "small",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : "END (ERROR)"
+    }
+  }, {
+    "innerId" : 4,
+    "description" : "",
+    "name" : "C",
+    "x" : 75,
+    "y" : 80,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "default",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : null
+    }
+  }, {
+    "innerId" : 5,
+    "description" : "",
+    "name" : "D",
+    "x" : -130,
+    "y" : 270,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "small",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : "END (ERROR)"
+    }
+  }, {
+    "innerId" : 6,
+    "description" : "",
+    "name" : "E",
+    "x" : 75,
+    "y" : 250,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "default",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : null
+    }
+  }, {
+    "innerId" : 7,
+    "description" : "",
+    "name" : "F",
+    "x" : -110,
+    "y" : 440,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "small",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : "END (ERROR)"
+    }
+  }, {
+    "innerId" : 8,
+    "description" : "",
+    "name" : "G",
+    "x" : 80,
+    "y" : 460,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "small",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : "END( SUCCESS)"
+    }
+  } ],
+  "edges" : [ {
+    "innerId" : 1,
+    "description" : "",
+    "source" : 1,
+    "target" : 2,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "default",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : null
+    }
+  }, {
+    "innerId" : 2,
+    "description" : "",
+    "source" : 2,
+    "target" : 3,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "default",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : "ANO"
+    }
+  }, {
+    "innerId" : 3,
+    "description" : "",
+    "source" : 2,
+    "target" : 4,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "default",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : "NE"
+    }
+  }, {
+    "innerId" : 4,
+    "description" : "",
+    "source" : 4,
+    "target" : 5,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "default",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : "NE"
+    }
+  }, {
+    "innerId" : 5,
+    "description" : "",
+    "source" : 4,
+    "target" : 6,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "default",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : "ANO"
+    }
+  }, {
+    "innerId" : 6,
+    "description" : "",
+    "source" : 6,
+    "target" : 7,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "default",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : "ANO"
+    }
+  }, {
+    "innerId" : 7,
+    "description" : "",
+    "source" : 6,
+    "target" : 8,
+    "categories" : [ ],
+    "attributes" : [ ],
+    "viewModifier" : {
+      "priority" : 1,
+      "nodeSize" : "default",
+      "nodeFillColor" : "default",
+      "nodeOutlineColor" : "default",
+      "edgeColor" : "default",
+      "label" : "NE"
+    }
+  } ]
+}

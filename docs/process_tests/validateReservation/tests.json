@@ -1,0 +1,414 @@
+{
+  "testSetName": "Process test set 13.5.2026;15:26",
+  "graphName": "validateReservation",
+  "algorithmType": "PCT",
+  "tdl": 2,
+  "reduction": false,
+  "showNodes": false,
+  "testPaths": [
+    {
+      "testPathId": 1,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 2,
+          "edgeLabel": "ANO"
+        }
+      ]
+    },
+    {
+      "testPathId": 2,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 3,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 4,
+          "edgeLabel": "ANO"
+        }
+      ]
+    },
+    {
+      "testPathId": 3,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 3,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 5,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 6,
+          "edgeLabel": "ANO"
+        }
+      ]
+    },
+    {
+      "testPathId": 4,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 3,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 5,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 7,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 8,
+          "edgeLabel": "ANO"
+        }
+      ]
+    },
+    {
+      "testPathId": 5,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 3,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 5,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 7,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 9,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 10,
+          "edgeLabel": "NE"
+        }
+      ]
+    },
+    {
+      "testPathId": 6,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 3,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 5,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 7,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 9,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 11,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 12,
+          "edgeLabel": "NE"
+        }
+      ]
+    },
+    {
+      "testPathId": 7,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 3,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 5,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 7,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 9,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 11,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 13,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 14,
+          "edgeLabel": "ANO"
+        }
+      ]
+    },
+    {
+      "testPathId": 8,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 3,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 5,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 7,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 9,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 11,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 13,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 15,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 16,
+          "edgeLabel": "ANO"
+        }
+      ]
+    },
+    {
+      "testPathId": 9,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 3,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 5,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 7,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 9,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 11,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 13,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 15,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 17,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 18,
+          "edgeLabel": "ANO"
+        }
+      ]
+    },
+    {
+      "testPathId": 10,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 3,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 5,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 7,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 9,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 11,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 13,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 15,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 17,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 19,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 20,
+          "edgeLabel": "ANO"
+        }
+      ]
+    },
+    {
+      "testPathId": 11,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 3,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 5,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 7,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 9,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 11,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 13,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 15,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 17,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 19,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 21,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 22,
+          "edgeLabel": "ANO"
+        }
+      ]
+    },
+    {
+      "testPathId": 12,
+      "values": [
+        {
+          "edgeId": 1
+        },
+        {
+          "edgeId": 3,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 5,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 7,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 9,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 11,
+          "edgeLabel": "ANO"
+        },
+        {
+          "edgeId": 13,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 15,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 17,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 19,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 21,
+          "edgeLabel": "NE"
+        },
+        {
+          "edgeId": 23,
+          "edgeLabel": "NE"
+        }
+      ]
+    }
+  ]
+}
