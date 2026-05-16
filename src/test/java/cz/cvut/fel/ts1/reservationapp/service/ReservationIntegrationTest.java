@@ -41,7 +41,7 @@ public class ReservationIntegrationTest {
 
         Reservation savedReservation = reservationService.createReservation(guestReservation);
 
-        assertNotNull(savedReservation.getId());
+        assertEquals(1, savedReservation.getId());
         assertEquals(ReservationStatus.CONFIRMED, savedReservation.getStatus());
     }
 
